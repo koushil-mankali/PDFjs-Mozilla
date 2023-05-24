@@ -60,8 +60,10 @@ function App() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "../node_modules/pdfjs-dist/build/pdf.worker.js";
+    // pdfjsLib.GlobalWorkerOptions.workerSrc =
+    //   "../node_modules/pdfjs-dist/build/pdf.worker.js";
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.js`;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
